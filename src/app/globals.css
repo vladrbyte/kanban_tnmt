@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --page-bg: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #0b1120 100%);
+  --panel-bg: rgba(15, 23, 42, 0.82);
+  --title-color: #93c5fd;
+  --text-color: #e0f2fe;
+  --muted-text: #bfdbfe;
+  --border-color: #3b82f6;
+  --button-bg: #2563eb;
+  --button-hover: #1d4ed8;
+  --todo-border: #60a5fa;
+  --progress-border: #3b82f6;
+  --done-border: #1d4ed8;
+  --header-glow: 0 0 30px rgba(59, 130, 246, 0.35);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.tmnt-page {
+  background: var(--page-bg);
+  color: var(--text-color);
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+.tmnt-title {
+  color: var(--title-color);
+  text-shadow: var(--header-glow);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.tmnt-muted {
+  color: var(--muted-text);
+  transition: color 0.3s ease;
+}
+
+.tmnt-panel {
+  background: var(--panel-bg);
+  color: var(--text-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tmnt-panel:hover {
+  transform: translateY(-4px);
+}
+
+.tmnt-panel--todo {
+  border-color: var(--todo-border);
+}
+
+.tmnt-panel--todo:hover {
+  box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--todo-border) 35%, transparent);
+}
+
+.tmnt-panel--progress {
+  border-color: var(--progress-border);
+}
+
+.tmnt-panel--progress:hover {
+  box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--progress-border) 35%, transparent);
+}
+
+.tmnt-panel--done {
+  border-color: var(--done-border);
+}
+
+.tmnt-panel--done:hover {
+  box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--done-border) 35%, transparent);
+}
+
+.tmnt-column-title {
+  transition: color 0.3s ease;
+}
+
+.tmnt-column-title--todo {
+  color: var(--todo-border);
+}
+
+.tmnt-column-title--progress {
+  color: var(--progress-border);
+}
+
+.tmnt-column-title--done {
+  color: var(--done-border);
+}
+
+.tmnt-skeleton {
+  background: color-mix(in srgb, var(--panel-bg) 70%, white 12%);
+}
+
+.tmnt-button {
+  background: var(--button-bg);
+  color: var(--text-color);
+  box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--button-bg) 45%, transparent);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tmnt-button:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px -10px color-mix(in srgb, var(--button-hover) 50%, transparent);
+}
+
+.turtle-select__option--is-focused {
+  background: transparent !important;
+}
+
+.turtle-select__option:hover {
+  background: var(--button-hover) !important;
+  color: var(--text-color) !important;
+}
+
+.turtle-select__option--is-selected {
+  background: var(--button-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.turtle-select__option--is-selected:hover {
+  background: var(--button-hover) !important;
+}
+
+.master-backlog-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(216, 188, 188, 0.45) transparent;
+}
+
+.master-backlog-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.master-backlog-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.master-backlog-scroll::-webkit-scrollbar-thumb {
+  background: rgba(216, 188, 188, 0.42);
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+.master-backlog-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(243, 217, 217, 0.62);
 }
