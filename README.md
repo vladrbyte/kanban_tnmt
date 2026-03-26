@@ -2,6 +2,14 @@
 
 A specialized Task Management System for Master Splinter and the Teenage Mutant Ninja Turtles. Built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**.
 
+## 📸 Preview
+
+**Master View:**
+![Master Dashboard](public/screen/master.png)
+
+**Crew Dashboard:**
+![Crew Dashboard](public/screen/crew.png)
+
 ## 🛠 Architecture & "Clean Code" Approach
 
 During the development, the project underwent a significant refactoring (the "grooming" phase) to ensure scalability and maintainability:
