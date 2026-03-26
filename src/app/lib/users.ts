@@ -1,5 +1,7 @@
+import {CharacterId} from './tasks'
+
 export type Character = {
-  id: string;
+  id: CharacterId;
   name: string;
   avatar: string;
   emoji: string,

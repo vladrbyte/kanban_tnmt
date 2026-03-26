@@ -7,21 +7,52 @@ export const selectStyles = (theme: {
   buttonBackground: string;
   buttonHover: string;
 }) => ({
+
+  container: (base: any) => ({
+    ...base,
+    width: '100%',
+    height: '100%',
+    margin: 0,
+    padding: 0,
+  }),
+
   control: (base: any, state: any) => ({
     ...base,
+    width: '100%',
+    minHeight: '64px',
+    height: '64px',
     background: theme.panelBackground,
-    border: `2px solid ${theme.borderColor}`,
+    border: 'none', // `2px solid ${theme.borderColor}`,
     borderRadius: '0.75rem',
     boxShadow: state.isFocused ? theme.headerGlow : 'none',
-    minHeight: '56px',
+    display: 'flex',
+    alignItems: 'center',
     color: theme.textColor,
     transition: 'all 0.2s ease',
   }),
 
-  singleValue: (base: any) => ({
+  dropdownIndicator: (base: any) => ({
     ...base,
     color: theme.textColor,
-    fontWeight: 700,
+    padding: 8,
+  }),
+
+  indicatorsContainer: (base: any) => ({
+    ...base,
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+  }),
+
+  indicatorSeparator: () => ({
+    display: 'none',
+  }),
+
+  input: (base: any) => ({
+    ...base,
+    color: theme.textColor,
+    margin: 0,
+    padding: 0,
   }),
 
   menu: (base: any) => ({
@@ -39,7 +70,7 @@ export const selectStyles = (theme: {
 
   option: (base: any, state: any) => ({
     ...base,
-    backgroundColor: state.isSelected ? theme.buttonBackground : 'transparent',
+    backgroundColor: state.isFocused ? theme.buttonHover : state.isSelected ? theme.buttonBackground : 'transparent',
     color: theme.textColor,
     cursor: 'pointer',
     padding: '10px 10px',
@@ -51,17 +82,22 @@ export const selectStyles = (theme: {
     color: theme.mutedText,
   }),
 
-  input: (base: any) => ({
+  singleValue: (base: any) => ({
     ...base,
     color: theme.textColor,
+    fontWeight: 700,
+    margin: 0,
+    display: 'flex',
+    alignItems: 'center',
   }),
 
-  dropdownIndicator: (base: any) => ({
+  valueContainer: (base: any) => ({
     ...base,
-    color: theme.textColor,
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 16px',
+    margin: 0,
   }),
 
-  indicatorSeparator: () => ({
-    display: 'none',
-  }),
 });

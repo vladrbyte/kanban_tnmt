@@ -132,26 +132,27 @@ body {
   background: var(--button-hover) !important;
 }
 
-.master-backlog-scroll {
+.themed-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgba(216, 188, 188, 0.45) transparent;
+  scrollbar-color: var(--scroll-color, rgba(216, 188, 188, 0.45)) transparent;
 }
 
-.master-backlog-scroll::-webkit-scrollbar {
+.themed-scroll::-webkit-scrollbar {
   width: 6px;
 }
 
-.master-backlog-scroll::-webkit-scrollbar-track {
+.themed-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.master-backlog-scroll::-webkit-scrollbar-thumb {
-  background: rgba(216, 188, 188, 0.42);
+.themed-scroll::-webkit-scrollbar-thumb {
+  background: var(--scroll-color, rgba(216, 188, 188, 0.42));
   border-radius: 999px;
   border: 1px solid transparent;
   background-clip: padding-box;
 }
 
-.master-backlog-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(243, 217, 217, 0.62);
+.themed-scroll::-webkit-scrollbar-thumb:hover {
+  /* background: rgba(243, 217, 217, 0.62); */
+  filter: brightness(1.2);
 }
