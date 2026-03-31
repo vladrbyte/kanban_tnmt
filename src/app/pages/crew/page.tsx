@@ -96,7 +96,7 @@ export default function ViewCrew() {
 
 	return (
 		<main id="crew-main"
-			className="tmnt-page min-h-screen p-8 transition-all duration-500"
+			className="tmnt-page min-h-screen p-8 transition-all duration-500 select-none"
 			style={
 				{
 					'--page-bg': theme.pageBackground,

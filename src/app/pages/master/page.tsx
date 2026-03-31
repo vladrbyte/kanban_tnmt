@@ -25,7 +25,7 @@ export default function MasterPage() {
 	const {
 		taskList, expandedTaskId, setExpandedTaskId, isModalOpen,
 		setIsModalOpen, newTask, setNewTask, error, setError,
-		toggleAssignee, deleteTask, handleCreateTask, toggleSuitable
+		toggleAssignee, deleteTask, handleCreateTask, toggleSuitable, searchQuery, setSearchQuery, filteredTasks,
 	} = useMasterLogic();
 
 	const assignedTasksByTurtle = Object.fromEntries(
@@ -37,7 +37,7 @@ export default function MasterPage() {
 
 	return (
 		<main id="master-main"
-			className="tmnt-page h-screen p-8 transition-all duration-500 overflow-hidden"
+			className="tmnt-page h-screen p-8 transition-all duration-500 overflow-hidden select-none"
 			style={
 				{
 					'--page-bg': theme.pageBackground,
@@ -66,6 +66,8 @@ export default function MasterPage() {
 							<input
 								id="master-search"
 								type="text"
+								value={searchQuery}
+								onChange={(e) => setSearchQuery(e.target.value)}
 								placeholder={searchContent}
 								className="rounded-xl border-2 px-4 h-12 w-full bg-transparent"
 								style={{ borderColor: theme.borderColor, color: theme.textColor }}
@@ -73,7 +75,7 @@ export default function MasterPage() {
 						</div>
 
 						<div id="master-task-list" className="themed-scroll space-y-3 pr-1 flex-1 min-h-0 overflow-y-auto" >
-							{taskList.map((task) => {
+							{filteredTasks.map((task) => {
 								const hasMinCrew = task.assignees.length >= task.crewSize.min;
 								const isExpanded = expandedTaskId === task.id;
 								return (
