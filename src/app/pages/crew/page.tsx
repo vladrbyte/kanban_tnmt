@@ -40,7 +40,7 @@ export default function ViewCrew() {
 	const customOption = (option: TurtleOption): ReactNode => (
 		<div className="flex items-center gap-3 h-full">
 			<img
-				src={`/kanban_tnmt${option.avatar}`}
+				src={option.avatar}
 				alt={option.label}
 				className="h-10 w-10 rounded-full border-2 object-cover shrink-0"
 				style={{ borderColor: theme.borderColor }}

@@ -22,7 +22,7 @@ export const HeaderShell = ({ theme, subtitle, crewMember }: HeaderShellProps) =
       <div id="header-shell-left" className="flex items-center gap-4">
         <img
           id="header-shell-avatar"
-          src="/avatars/splinter.jpg"
+          src="/kanban_tnmt/avatars//splinter.jpg"
           alt="Splinter"
           className="h-16 w-16 rounded-full object-cover border-2 shrink-0"
           style={{ borderColor: theme.borderColor }}
