@@ -40,7 +40,7 @@ export default function ViewCrew() {
 	const customOption = (option: TurtleOption): ReactNode => (
 		<div className="flex items-center gap-3 h-full">
 			<img
-				src={option.avatar}
+				src={`/kanban_tnmt${option.avatar}`}
 				alt={option.label}
 				className="h-10 w-10 rounded-full border-2 object-cover shrink-0"
 				style={{ borderColor: theme.borderColor }}
@@ -62,7 +62,7 @@ export default function ViewCrew() {
 				classNamePrefix="turtle-select"
 				options={turtleOptions}
 				value={selectedTurtle}
-				onChange={(option) => option && setSelectedTurtle(option as TurtleOption)}
+				onChange={(option: TurtleOption) => option && setSelectedTurtle(option as TurtleOption)}
 				styles={selectStyles(theme)}
 				formatOptionLabel={customOption}
 				isSearchable={false}
