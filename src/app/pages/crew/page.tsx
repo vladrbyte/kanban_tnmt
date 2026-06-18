@@ -62,7 +62,7 @@ export default function ViewCrew() {
 				classNamePrefix="turtle-select"
 				options={turtleOptions}
 				value={selectedTurtle}
-				onChange={(option: TurtleOption) => option && setSelectedTurtle(option as TurtleOption)}
+				onChange={(option) => option && setSelectedTurtle(option as TurtleOption)}
 				styles={selectStyles(theme)}
 				formatOptionLabel={customOption}
 				isSearchable={false}
