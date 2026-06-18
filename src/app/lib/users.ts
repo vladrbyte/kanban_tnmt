@@ -13,7 +13,7 @@ export const master: Character[] = [
   {
     id: 'splinter',
     name: 'Splinter',
-    avatar: '/avatars/splinter.jpg',
+    avatar: './avatars/splinter.jpg',
     emoji: ' 🐀',
     colorPrimary: '#be251ace',
     role: 'Master'
@@ -23,7 +23,7 @@ export const turtles: Character[] = [
   {
     id: 'leo',
     name: 'Leonardo',
-    avatar: '/avatars/leo.jpg',
+    avatar: './avatars/leo.jpg',
     emoji:  '🐢',
     colorPrimary: '#3B82F6',
     role: 'Leader'
@@ -31,7 +31,7 @@ export const turtles: Character[] = [
   {
     id: 'raph', 
     name: 'Raphael',
-    avatar: '/avatars/raph.jpg',
+    avatar: './avatars/raph.jpg',
     emoji:  '🐢',
     colorPrimary: '#EF4444',
     role: 'Fighter'
@@ -39,7 +39,7 @@ export const turtles: Character[] = [
   {
     id: 'don',
     name: 'Donatello',
-    avatar: '/avatars/don.jpg',
+    avatar: './avatars/don.jpg',
     emoji:  '🐢',
     colorPrimary: '#8B5CF6',
     role: 'Tech'
@@ -47,7 +47,7 @@ export const turtles: Character[] = [
   {
     id: 'mike',
     name: 'Michelangelo',
-    avatar: '/avatars/mike.jpg', 
+    avatar: './avatars/mike.jpg', 
     emoji:  '🐢',
     colorPrimary: '#F59E0B',
     role: 'Fun'
